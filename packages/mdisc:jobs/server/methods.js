@@ -35,8 +35,3 @@ Meteor.methods({
     //TODO: find all type moveArchiveToNAS jobs that are waiting or ready then call MdJobs.jc.resumeJobs()
   }
 });
-
-MdJobs.jc.events.on('call', function (msg) {
-  console.log(msg.method+" -> "+msg.userId);
-});
-
