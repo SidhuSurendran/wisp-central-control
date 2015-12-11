@@ -155,6 +155,12 @@ section #home,#how,#testimonials,#tech,#pricing {
   position:absolute; 
   top:-80px;
 }
+section #pricing,#h6:hover{
+  cursor: pointer;
+}
+section #pricing,#h5:hover{
+  cursor: pointer;
+}
 @media all and (max-width: 767px) {
   section {
     padding: 40px 0;
