@@ -36,3 +36,7 @@ Meteor.methods({
   }
 });
 
+MdJobs.jc.events.on('call', function (msg) {
+  console.log(msg.method+" -> "+msg.userId);
+});
+

@@ -29,6 +29,8 @@ Package.onUse(function(api) {
     'client/templates/admin-view.js',
     'client/templates/job-table.html',
     'client/templates/job-table.js',
+    'client/templates/workers.html',
+    'client/templates/workers.js',
     'client/menu.js',
     ], ['client']);
 
