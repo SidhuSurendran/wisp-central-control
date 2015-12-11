@@ -36,6 +36,9 @@ Template.mdJobsJobEntry.helpers({
       return true;
     }
     return false;
+  },
+  round: function (num, digits) {
+    return Math.round(num*Math.pow(10,digits))/Math.pow(10,digits);
   }
 });
 
