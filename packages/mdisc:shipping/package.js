@@ -17,7 +17,6 @@ Package.onUse(function (api) {
         'wisptools:menu',
         'mdisc:archive',
         'mrt:qr-scanner@0.2.0',
-        'zimme:luhn@0.1.4',
         'wisptools:growl',
         'mdisc:img-to-pdf',
         'mdisc:easypost'
