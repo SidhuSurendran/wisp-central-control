@@ -32,10 +32,10 @@
     <td>
       {{#if equals status "running"}}
         <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{progress.percent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress.percent}}%">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{round progress.percent 0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{round progress.percent 0}}%">
           </div>
         </div>
-        <div>Running {{progress.percent}}%</div>
+        <div>Running {{round progress.percent 2}}%</div>
       {{else}}
         <div>{{status}}</div>
       {{/if}}
