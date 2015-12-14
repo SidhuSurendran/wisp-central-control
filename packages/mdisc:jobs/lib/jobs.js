@@ -11,7 +11,9 @@ MdJobs = {
       }
       return res;
     }
-  })
+  }),
+  
+  stats: WtCollection('md_jobs_stats')
 
 };
 
@@ -35,8 +37,21 @@ if (Meteor.isServer) {
     if (Meteor.settings.isJobServer || process.env.IS_JOB_SERVER) {
       // Start the queue running
       console.log('Job Server Started');
-      return MdJobs.jc.startJobServer();
+      MdJobs.jc.startJobServer();
     }
+    
+    MdJobs.stats.remove({});
+    if (Meteor.settings.workers) {
+      var workers = Meteor.settings.workers;
+      for (i in workers) {
+        MdJobs.stats.insert({name: workers[i].name, userId: workers[i].userId, lastCall: 0});
+      }
+    }
+    
+    MdJobs.jc.events.on('call', function (msg) {
+      MdJobs.stats.update({userId: msg.userId}, {$set: {lastCall: new Date()}});
+    });
+
   });
 
 }
