@@ -18,7 +18,7 @@
             </thead>
             <tbody>
               {{#each workers}}
-              <tr>
+              <tr class="worker-row" style="cursor: pointer;">
                 <td>{{name}}</td>
                 <td>{{#if lastCall}}{{relativeTime lastCall}}{{/if}}</td>
                 <td>

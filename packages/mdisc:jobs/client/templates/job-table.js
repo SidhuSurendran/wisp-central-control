@@ -8,7 +8,13 @@ var indexOf = [].indexOf || function (item) {
 
 Template.mdJobsJobTable.helpers({
   jobs: function () {
-    return MdJobs.jc.find({}, {sort: {after: -1}});
+    var jobFilter = Session.get('filterJobs');
+    if (jobFilter) {
+      var regx = new RegExp(jobFilter+".*");
+      return MdJobs.jc.find({type: {$regex: regx}}, {sort: {after: -1}});
+    } else {
+      return MdJobs.jc.find({}, {sort: {after: -1}});
+    }
   }
 });
 

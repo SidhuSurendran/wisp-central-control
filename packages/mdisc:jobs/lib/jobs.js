@@ -41,11 +41,11 @@ if (Meteor.isServer) {
     }
     
     MdJobs.stats.remove({});
-    if (Meteor.settings.workers) {
-      var workers = Meteor.settings.workers;
-      for (i in workers) {
-        MdJobs.stats.insert({name: workers[i].name, userId: workers[i].userId, lastCall: 0});
-      }
+    var jobServers = Meteor.users.find({roles: {$in: ['job-server']}});
+    if (jobServers) {
+      jobServers.forEach(function (jobServer) {
+        MdJobs.stats.insert({name: jobServer.emails[0].address, userId: jobServer._id, lastCall: 0});
+      });
     }
     
     MdJobs.jc.events.on('call', function (msg) {

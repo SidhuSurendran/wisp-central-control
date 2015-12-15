@@ -21,3 +21,22 @@ Template.registerHelper("relativeTime", function (time) {
 Template.registerHelper("equals", function (a, b) {
   return a === b;
 });
+
+Template.mdJobsWorking.helpers({
+  hasFilter: function () {
+    var jobFilter = Session.get('filterJobs');
+    if (jobFilter) {
+      return true;
+    }
+    return false;
+  },
+  jobFilter: function () {
+    return Session.get('filterJobs');
+  }
+});
+
+Template.mdJobsWorking.events({
+  'click .removeFilter': function () {
+    Session.set('filterJobs', '');
+  }
+});
