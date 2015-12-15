@@ -43,7 +43,7 @@ Template.mdMandrillTest.events({
       console.log('email address not set');
     }
   },
-  'click a#btn-ship': function(e, t) {
+  'click a#btn-prepare': function(e, t) {
     e.preventDefault();
 
     var email = document.getElementById('email').value;

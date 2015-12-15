@@ -111,9 +111,15 @@ Meteor.methods({
     return result.data;
   },
   
-  mdChargeBeeListSubscriptions: function () {
-    if (!this.userId) throw new Meteor.Error(401, "Not authorized"); // Check user logged in.
-    var cbCustomer = MdChargeBee.customers.findOne({owner: this.userId});
+  mdChargeBeeListSubscriptions: function (userId) {
+    // security check if called with a userId
+    if (userId && !Roles.userIsInRole(Meteor.userId(), ['admin'])) throw new Meteor.Error(401, "Not authorized"); // Check if calling user is admin
+    if (!userId && !this.userId) throw new Meteor.Error(401, "Not authorized"); // Check user logged in.
+
+    // use passed in userId if set.
+    var _userId = userId || this.userId;
+
+    var cbCustomer = MdChargeBee.customers.findOne({owner: _userId});
     if (!cbCustomer) {
       //throw new Meteor.Error("chargebee-error", 'ChargeBee customer does not exist');
       //Returns false instead of throwing an error indicating that subscription does not exist.
@@ -151,6 +157,21 @@ Meteor.methods({
     return hasActiveSubscription;
   },
 
+  mdChargeBeeHasSubscriptionById: function (userId) {
+    if (!Roles.userIsInRole(Meteor.userId(), ['admin'])) throw new Meteor.Error(401, "Not authorized"); // Check if calling user is admin
+
+    // Check if user already has subscription
+    var res = Meteor.call('mdChargeBeeListSubscriptions', userId);
+    var hasActiveSubscription = false;
+    if (res && res.length>0) {
+      for (var i=0; i<res.length; i++) {
+        if (res[i].subscription.status && res[i].subscription.status == 'active') {
+          hasActiveSubscription = true;
+        }
+      }
+    }
+    return hasActiveSubscription;
+  },
   
   mdChargeBeeCancelSubscription: function (subscriptionId) {
     if (!this.userId) throw new Meteor.Error(401, "Not authorized"); // Check user logged in.
