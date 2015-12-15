@@ -1,7 +1,6 @@
 Meteor.methods({
-  getFirstname: function () {
-    var user = Meteor.user();
-    // Logged in?
+  getFirstname: function (user) {
+    if (!user) user = Meteor.user();
     if (!user) { return null; }
 
     var firstname = '';
@@ -14,9 +13,8 @@ Meteor.methods({
     return firstname;
 
   },
-  getFullName: function () {
-    var user = Meteor.user();
-    // Logged in?
+  getFullName: function (user) {
+    if (!user) user = Meteor.user();
     if (!user) { return null; }
 
     var name = '';
@@ -29,9 +27,8 @@ Meteor.methods({
     return name;
 
   },
-  getEmail: function () {
-    var user = Meteor.user();
-    // Logged in?
+  getEmail: function (user) {
+    if (!user) user = Meteor.user();
     if (!user) { return null; }
 
     var email = '';

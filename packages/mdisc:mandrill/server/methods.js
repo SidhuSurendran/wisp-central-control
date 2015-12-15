@@ -17,14 +17,12 @@ Meteor.methods({
       console.log(err);
     });
   },
-  sendWelcomeEmail: function () {
-    if (!Meteor.userId()) {
-      // user not logged in.
-      return null;
-    }
+  sendWelcomeEmail: function (user) {
+    if (!user) user = Meteor.user();
+    if (!user) { return null; }
 
-    var firstname = Meteor.call('getFirstname');
-    var email = Meteor.call('getEmail');
+    var firstname = Meteor.call('getFirstname', user);
+    var email = Meteor.call('getEmail', user);
 
     Mandrill.messages.sendTemplate({
       template_name: 'new-account',

@@ -43,9 +43,6 @@ parseUSPSBarcode = function(data) {
     if (data.length != 30) {
         return false;
     }
-    if (!Luhn.validate(data)) {
-        return false;
-    }
     var result = {
         RAI: data.slice(0, 3),
         ZIP: data.slice(3, 8),

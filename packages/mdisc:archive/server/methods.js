@@ -84,10 +84,10 @@ Meteor.methods({
         zip: "84003"
       };
       var parcel = {
-        length: 5,
+        length: 7,
         width: 5,
-        height: 5,
-        weight: 10
+        height: 0.5,
+        weight: 6
       };
       var shipment = Meteor.call('mdEasypostCreateShipment', toAddress, fromAddress, parcel);
       if (shipment) {
