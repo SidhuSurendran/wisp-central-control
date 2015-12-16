@@ -93,6 +93,7 @@ Meteor.methods({
       if (shipment) {
         Meteor.call('setArchiveShippingLabel', shipment.postage_label.label_url, archiveId);
         Meteor.call('setArchiveTrackingId', shipment.tracking_code, archiveId);
+        Meteor.call('sendArchiveShippedEmail', archiveId);
         return MdArchive.collection.findOne({_id: archiveId});
       } else {
         throw new Meteor.Error("easypost-error", "Failed to create shipping label.");
