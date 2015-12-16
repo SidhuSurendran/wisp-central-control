@@ -7,11 +7,11 @@ Meteor.setInterval((function () {
 
 Template.mdJobsWorkers.helpers({
   workers: function () {
-    return MdJobs.stats.find();
+    return Meteor.users.find({roles: {$in: ['job-server']}});
   },
   
-  isOnline: function (lastCall) {
-    if (reactiveDate.get()-lastCall<tick) {
+  isOnline: function (lastActive) {
+    if (reactiveDate.get()-lastActive<tick) {
       return true;
     }
     return false;
@@ -21,7 +21,7 @@ Template.mdJobsWorkers.helpers({
 Template.mdJobsWorkers.events({
   'click .worker-row': function () {
     var type = '';
-    switch (this.name) {
+    switch (this.emails[0].address) {
       case 'downloadserver@mdisc.com':
         type = 'downloadArchive';
         break;

@@ -32,15 +32,18 @@ Package.onUse(function(api) {
     'client/templates/workers.html',
     'client/templates/workers.js',
     'client/menu.js',
+    'client/subscriptions.js'
     ], ['client']);
 
   api.addFiles([
-    'lib/jobs.js',
+    'lib/collections.js',
     'lib/router.js'
     ], ['server','client']);
 
   api.addFiles([
-    'server/methods.js'
+    'server/methods.js',
+    'server/publications.js',
+    'server/jobs.js'
     ], ['server']);
   
   api.export('Jobs');

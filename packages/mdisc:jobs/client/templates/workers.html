@@ -19,10 +19,10 @@
             <tbody>
               {{#each workers}}
               <tr class="worker-row" style="cursor: pointer;">
-                <td>{{name}}</td>
-                <td>{{#if lastCall}}{{relativeTime lastCall}}{{/if}}</td>
+                <td>{{#each emails}}{{address}} {{/each}}</td>
+                <td>{{#if lastActive}}{{relativeTime lastActive}}{{/if}}</td>
                 <td>
-                  <i class="fa fa-circle fa-2x text-{{#if isOnline lastCall}}success{{else}}danger{{/if}}"></i>
+                  <i class="fa fa-circle fa-2x text-{{#if isOnline lastActive}}success{{else}}danger{{/if}}"></i>
                 </td>
               </tr>
               {{/each}}
