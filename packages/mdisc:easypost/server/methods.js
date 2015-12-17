@@ -130,15 +130,12 @@ Meteor.methods({
         return future.wait();
     },
     mdEasypostTrackShipment: function(trackId) {
-        if (!Roles.userIsInRole(Meteor.userId(), ['admin'])) throw new Meteor.Error(401, "Not authorized"); // Check if calling user is admin
+        if (!Meteor.userId()) throw new Meteor.Error(401, "Not authorized"); // Check if user is logged in.
         var future = new Future();
         easypost.Tracker.create({
             tracking_code: trackId
         }, function(err, response) {
-            
           future.return(response);
-            
-           
         });
         return future.wait();
     },
