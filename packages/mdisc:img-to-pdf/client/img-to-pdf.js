@@ -2,7 +2,7 @@ ImgToPdf = {};
 
 ImgToPdf.print = function (imgURL, callback) {
     // create a document and pipe to a blob
-    var doc = new pdfKit({size: [400, 600], margin: 0});
+    var doc = new pdfKit({size: [1200, 1800], margin: 0});
     var stream = doc.pipe(blobStream());
     
     var img = document.createElement("img");
@@ -35,9 +35,10 @@ ImgToPdf.print = function (imgURL, callback) {
     img.onload = function () {
         canvas.width = img.width;
         canvas.height = img.height;
-        var ctx = canvas.getContext("2d");
+        var ctx = canvas.getContext("2d", {alpha: false});
+        ctx.fillStyle = "rgb(255,255,255)";
         ctx.drawImage(img, 0, 0);
-        doc.image(canvas.toDataURL(), 0, 0, {width: 400, hieght: 600});
+        doc.image(canvas.toDataURL(), 0, 0, {width: 1200, hieght: 1800});
         doc.end();
     };
     img.src = imgURL;
