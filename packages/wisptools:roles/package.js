@@ -36,6 +36,7 @@ Package.onUse(function(api) {
     
   api.addFiles([
     'client/menu.js',
+    'client/subscription.js',
     'client/templates/users.html',
     'client/templates/users.js'
   ], 'client');
