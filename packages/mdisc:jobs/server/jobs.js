@@ -13,6 +13,6 @@ Meteor.startup(function () {
     MdJobs.jc.startJobServer();
   }
   MdJobs.jc.events.on('call', function (msg) {
-    Meteor.users.update({_id: msg.userId, roles: {$in: ['job-server']}}, {$set: {lastActive: new Date()}});
+    Meteor.users.update({_id: msg.userId, roles: {$in: ['job-server']}}, {$set: {"profile.lastActive": new Date()}});
   });
 });
