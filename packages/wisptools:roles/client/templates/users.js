@@ -14,7 +14,10 @@ Template.wtRolesUsersSelect.helpers({
     }
     return "";
   },
-  disabled: function (role, roleList) {
+  disabled: function (role, roleList, userId) {
+    if (Meteor.userId()==userId && role=="admin") {
+      return "disabled";
+    }
     if (roleList.length<2 && roleList.indexOf(role)>-1) {
       return "disabled";
     }
