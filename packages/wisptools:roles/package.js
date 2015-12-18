@@ -38,7 +38,9 @@ Package.onUse(function(api) {
     'client/menu.js',
     'client/subscription.js',
     'client/templates/users.html',
-    'client/templates/users.js'
+    'client/templates/users.js',
+    'client/templates/manage-roles.html',
+    'client/templates/manage-roles.js'
   ], 'client');
     
   api.addFiles([
