@@ -16,7 +16,7 @@ Template.home.onRendered(function() {
     $(this).addClass('fadeIn');
   });
 
-
+/*
   videojs.autoSetup();
 
   videojs('main_video').ready(function(){
@@ -38,6 +38,7 @@ Template.home.onRendered(function() {
     // Then on resize call resizeVideoJS()
     window.onresize = resizeVideoJS; 
   });
+*/
 
 });
 
