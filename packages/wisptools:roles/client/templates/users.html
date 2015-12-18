@@ -5,21 +5,21 @@
         <tbody>
           <tr>
             <th>Email</th>
-            <th>Role</th>
+            <th>Roles</th>
           </tr>
           {{#each userList}}
-            <tr>
-              <td>
-                {{username}}
-                {{#each emails}}
-                  {{address}}
-                {{/each}}
-                {{services.google.email}}
-              </td>
-              <td>
-               {{>wtRolesUsersSelect}}
-              </td>
-            </tr>
+          <tr>
+            <td>
+              {{username}}
+              {{#each emails}}
+              {{address}}
+              {{/each}}
+              {{services.google.email}}
+            </td>
+            <td>
+              {{>wtRolesUsersSelect}}
+            </td>
+          </tr>
           {{/each}}
         </tbody>
       </table>
@@ -28,9 +28,12 @@
 </template>
 
 <template name="wtRolesUsersSelect">
-  <select class="form-control type-sel" width="auto">
-    {{#each typeList}}
-      <option value={{roles}} {{selected name userType.roles}}>{{name}}</option>
-    {{/each}}
-  </select>
+  {{#each roleList}}
+  <div class="checkbox-inline {{disabled name ../roles}}">
+    <label>
+      <input class="roleCheckBox" type="checkbox" value="{{name}}" {{checked name ../roles}} {{disabled name ../roles ../_id}}>
+      {{name}}
+    </label>
+  </div>
+  {{/each}}
 </template>

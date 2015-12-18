@@ -1,0 +1,30 @@
+<template name="wtRolesManageRoles">
+  <div class="bg-secondary app-page">
+    <div class="container">
+      <table class="table table-hover"  >
+        <tbody>
+          <tr>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+          {{#each roleList}}
+          <tr>
+            <td>{{name}}</td>
+            <td>
+              <button class="btn btn-danger btn-xs removeRolebtn">Remove</button>
+            </td>
+          </tr>
+          {{/each}}
+          <tr>
+            <td>
+              <input type="text" id="rolename" class="form-control" />
+            </td>
+            <td>
+              <button class="btn btn-primary btn-xs addRolebtn">Add Role</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
