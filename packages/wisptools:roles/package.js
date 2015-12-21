@@ -45,7 +45,7 @@ Package.onUse(function(api) {
     
   api.addFiles([
     'server/publication.js',
-    'server/userMethods.js'
+    'server/methods.js'
   ], 'server');
 
   api.export('Roles');
