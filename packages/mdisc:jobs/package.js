@@ -29,16 +29,21 @@ Package.onUse(function(api) {
     'client/templates/admin-view.js',
     'client/templates/job-table.html',
     'client/templates/job-table.js',
+    'client/templates/workers.html',
+    'client/templates/workers.js',
     'client/menu.js',
+    'client/subscriptions.js'
     ], ['client']);
 
   api.addFiles([
-    'lib/jobs.js',
+    'lib/collections.js',
     'lib/router.js'
     ], ['server','client']);
 
   api.addFiles([
-    'server/methods.js'
+    'server/methods.js',
+    'server/publications.js',
+    'server/jobs.js'
     ], ['server']);
   
   api.export('Jobs');

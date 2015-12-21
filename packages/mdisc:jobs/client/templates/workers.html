@@ -1,0 +1,35 @@
+<template name="mdJobsWorkers">
+  <div class="bg-secondary app-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+              <h4>Workers</h4><hr />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th style="width: 40%;">Worker</th>
+                <th style="width: 35%;">Last Active</th>
+                <th style="width: 25%;">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each workers}}
+              <tr class="worker-row" style="cursor: pointer;">
+                <td>{{#each emails}}{{address}} {{/each}}</td>
+                <td>{{#if profile.lastActive}}{{relativeTime profile.lastActive}}{{/if}}</td>
+                <td>
+                  <i class="fa fa-circle fa-2x text-{{#if isOnline profile.lastActive}}success{{else}}danger{{/if}}"></i>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
