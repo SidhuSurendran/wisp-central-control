@@ -24,6 +24,7 @@
 .restartBtn:hover{
     background-color:#009c95 !important;
     border-radius:5px !important;
+    border:1px solid #01a49d !important;
 }
 .rerunBtn{
     background-color:#2185d0 !important;
@@ -33,6 +34,7 @@
 .rerunBtn:hover{
     background-color:#1678c2 !important;
     border-radius:5px !important;
+    border:1px solid #1171b9 !important;
 }
 .cancelBtn{
     background-color:#daa300 !important;
@@ -42,6 +44,7 @@
 .cancelBtn:hover{
     background-color:#eaae00 !important;
     border-radius:5px !important;
+    border:1px solid #bb8c01 !important;
 }
 .removeBtn{
     background-color:#db2828 !important;
