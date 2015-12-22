@@ -1,0 +1,58 @@
+.pauseBtn{
+    background-color:#e0e1e2 !important;
+    border-radius:5px !important;
+    color:#FFF !important;
+}
+.pauseBtn:hover{
+    background-color:#cacbcd !important;
+    border-radius:5px !important;
+}
+.resumeBtn{
+    background-color:#e0e1e2 !important;
+    border-radius:5px !important;
+    color:#FFF !important;
+}
+.resumeBtn:hover{
+    background-color:#cacbcd !important;
+    border-radius:5px !important;
+}
+.restartBtn{
+    background-color:#00b5ad !important;
+    border-radius:5px !important;
+    color:#FFF !important;
+}
+.restartBtn:hover{
+    background-color:#009c95 !important;
+    border-radius:5px !important;
+}
+.rerunBtn{
+    background-color:#2185d0 !important;
+    border-radius:5px !important;
+    color:#FFF !important;
+}
+.rerunBtn:hover{
+    background-color:#1678c2 !important;
+    border-radius:5px !important;
+}
+.cancelBtn{
+    background-color:#daa300 !important;
+    border-radius:5px !important;
+    color:#FFF !important;
+}
+.cancelBtn:hover{
+    background-color:#eaae00 !important;
+    border-radius:5px !important;
+}
+.removeBtn{
+    background-color:#db2828 !important;
+    border-radius:5px !important;
+    color:#FFF !important;
+}
+.removeBtn:hover{
+    background-color:#d01919 !important;
+    border-radius:5px !important;
+}
+.send-to-aru{
+    border-radius:5px !important;
+    color:#FFF !important;
+}
