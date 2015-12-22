@@ -33,5 +33,21 @@ Meteor.methods({
     if (!Roles.userIsInRole(Meteor.userId(), ['admin'])) throw new Meteor.Error(401, "Not authorized"); // Check if calling user is admin
     MdJobs.paused.update({jobType: 'moveArchiveToNAS'}, {$set: {paused: true}}, {upsert: false});
     //TODO: find all type moveArchiveToNAS jobs that are waiting or ready then call MdJobs.jc.resumeJobs()
+  },
+  createARUGroup: function (name) {
+    var group = MdJobs.groups.findOne({name: name});
+    if (group) {
+      throw new Meteor.Error("Group already exists");
+    } else {
+      MdJobs.groups.insert({name: name});
+    }
+  },
+  deleteARUGroup: function (name) {
+    var user = Meteor.users.findOne({"profile.aruGroups": {$in: [name]}});
+    if (user) {
+      throw new Meteor.Error("Group in use.");
+    } else {
+      MdJobs.groups.remove({name: name});
+    }
   }
 });

@@ -10,5 +10,7 @@ MdJobs = {
       }
       return res;
     }
-  })
+  }),
+  
+  groups: WtCollection('md_jobs_groups')
 };
