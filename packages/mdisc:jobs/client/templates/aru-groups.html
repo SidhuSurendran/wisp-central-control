@@ -1,0 +1,39 @@
+<template name="mdJobsARUGroups">
+  <div class="bg-secondary app-page">
+    <div class="container">
+      <table id="mdJobsUserTable" class="table table-hover">
+        <tbody>
+          <tr>
+            <th>Email</th>
+            <th>Groups</th>
+          </tr>
+          {{#each userList}}
+          <tr>
+            <td>
+              {{username}}
+              {{#each emails}}
+              {{address}}
+              {{/each}}
+              {{services.google.email}}
+            </td>
+            <td>
+              {{>mdJobsARUGroupsSelect}}
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+<template name="mdJobsARUGroupsSelect">
+  {{#each groupList}}
+  <div class="checkbox-inline">
+    <label>
+      <input class="groupCheckBox" type="checkbox" value="{{name}}" {{checked name ../profile.aruGroups}}>
+      {{name}}
+    </label>
+  </div>
+  {{/each}}
+</template>

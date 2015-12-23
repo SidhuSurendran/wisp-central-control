@@ -31,6 +31,10 @@ Package.onUse(function(api) {
     'client/templates/job-table.js',
     'client/templates/workers.html',
     'client/templates/workers.js',
+    'client/templates/manage-aru-groups.html',
+    'client/templates/manage-aru-groups.js',
+    'client/templates/aru-groups.html',
+    'client/templates/aru-groups.js',
     'client/menu.js',
     'client/subscriptions.js'
     ], ['client']);
