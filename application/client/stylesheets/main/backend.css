@@ -1,59 +1,37 @@
-.pauseBtn{
+.btn-admin{
+    border-radius:5px !important;
+    color:#FFF !important; 
+    border:none !important;
+}
+.btn-admin-default{
     background-color:#e0e1e2 !important;
-    border-radius:5px !important;
-    color:#FFF !important;
 }
-.pauseBtn:hover{
+.btn-admin-default:hover{
     background-color:#cacbcd !important;
-    border-radius:5px !important;
 }
-.resumeBtn{
-    background-color:#e0e1e2 !important;
-    border-radius:5px !important;
-    color:#FFF !important;
-}
-.resumeBtn:hover{
-    background-color:#cacbcd !important;
-    border-radius:5px !important;
-}
-.restartBtn{
+.btn-admin-success{
     background-color:#00b5ad !important;
-    border-radius:5px !important;
-    color:#FFF !important;
 }
-.restartBtn:hover{
+.btn-admin-success:hover{
     background-color:#009c95 !important;
-    border-radius:5px !important;
-    border:1px solid #01a49d !important;
 }
-.rerunBtn{
+.btn-admin-primary{
     background-color:#2185d0 !important;
-    border-radius:5px !important;
-    color:#FFF !important;
 }
-.rerunBtn:hover{
+.btn-admin-primary:hover{
     background-color:#1678c2 !important;
-    border-radius:5px !important;
-    border:1px solid #1171b9 !important;
 }
-.cancelBtn{
+.btn-admin-warning{
     background-color:#daa300 !important;
-    border-radius:5px !important;
-    color:#FFF !important;
 }
-.cancelBtn:hover{
+.btn-admin-warning:hover{
     background-color:#eaae00 !important;
-    border-radius:5px !important;
-    border:1px solid #bb8c01 !important;
 }
-.removeBtn{
+.btn-admin-danger{
     background-color:#db2828 !important;
-    border-radius:5px !important;
-    color:#FFF !important;
 }
-.removeBtn:hover{
-    background-color:#d01919 !important;
-    border-radius:5px !important;
+.btn-admin-danger:hover{
+    background-color:#ba1111 !important;
 }
 .send-to-aru{
     border-radius:5px !important;
