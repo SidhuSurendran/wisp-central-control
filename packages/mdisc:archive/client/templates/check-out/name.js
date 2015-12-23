@@ -22,17 +22,27 @@ Template.mdArchiveName.helpers({
 Template.mdArchiveName.events({
   'submit #archive-name-form': function(e, t) {
     e.preventDefault();
+    var archiveName = e.target[0].value;
     var subscription = MdArchive.subscription.findOne({owner: Meteor.userId()});
     if (subscription) {
-      MdArchive.subscription.update({_id: subscription._id}, {$set: {archiveName: e.target[0].value}});
+      MdArchive.subscription.update({_id: subscription._id}, {$set: {archiveName: archiveName}});
     } else {
+      // Init a new subscription
       var data = {
-        archiveName: e.target[0].value,
+        archiveName: archiveName,
         active: false,
         version: '0.0.1',
         subscriptionPlan: 'annual'
       }
       MdArchive.subscription.insert(data);
+
+      // Add subscription number
+      Meteor.call('mdCreateSubscriptionNumber', function (err, number) {
+        var subscription = MdArchive.subscription.findOne({owner: Meteor.userId()});
+        if (subscription) {
+          MdArchive.subscription.update({_id: subscription._id}, {$set: {subscriptionNumber: number}});
+        }
+      });
     }
     WtAccordionPage.enable('arch_plan');
     WtAccordionPage.show('arch_plan');

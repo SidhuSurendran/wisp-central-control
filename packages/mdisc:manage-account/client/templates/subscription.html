@@ -8,8 +8,11 @@
     {{> spinner}}
   {{else}}
     {{#if hasSubscription}}
-      {{#each getSubscriptions}}
-        <table class="table">
+      <table class="table">
+          <tr>
+            <td>Account: </td><td>{{sub.subscriptionNumber}}</td>
+          </tr>      
+        {{#each getSubscriptions}}
           <tr>
             <td>Started: </td><td>{{formatDate subscription.created_at}}</td>
             <td><a href="" class="subCancelBtn" data-toggle="modal" data-target="#confSubCancelModal" style="color:#444;">Cancel</a></td>
@@ -19,8 +22,8 @@
           <tr>
             <td>Payment: </td><td>****{{card.last4}}</td>
             <td><a href="" data-toggle="modal" data-target="#changeCardModal" style="color:#444;">Update</a></td></tr>
-        </table>
-      {{/each}}
+        {{/each}}
+      </table>
       {{> mdMyAccountCancelSubModal}}
       {{> mdMyAccountChangeCardModal}}
     {{else}}

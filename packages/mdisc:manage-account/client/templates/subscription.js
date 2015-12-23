@@ -17,7 +17,10 @@ Template.mdMyAccountYourSubscription.helpers({
   },
   planAmount: function (planId) {
     return MdChargeBee.planIdToAmount(planId);
-  }
+  },
+  sub: function () {
+    return MdArchive.subscription.findOne({owner: Meteor.userId()});
+  }  
 });
 
 Template.mdMyAccountYourSubscription.events({
