@@ -7,7 +7,12 @@ Meteor.setInterval((function () {
 
 Template.mdJobsWorkers.helpers({
   workers: function () {
-    return Meteor.users.find({roles: {$in: ['job-server']}});
+    var groupFilter = Session.get('filterWorkers');
+    if (groupFilter) {
+      return Meteor.users.find({roles: {$in: ['job-server']}, "profile.aruGroups": {$in: [groupFilter]}});
+    } else {
+      return Meteor.users.find({roles: {$in: ['job-server']}});
+    }
   },
   
   isOnline: function (lastActive) {
@@ -15,6 +20,18 @@ Template.mdJobsWorkers.helpers({
       return true;
     }
     return false;
+  },
+  
+  hasFilter: function () {
+    var groupFilter = Session.get('filterWorkers');
+    if (groupFilter) {
+      return true;
+    }
+    return false;
+  },
+  
+  groupFilter: function () {
+    return Session.get('filterWorkers');
   }
 });
 
@@ -34,5 +51,9 @@ Template.mdJobsWorkers.events({
     }
     Session.set('filterJobs', type);
     Router.go('mdJobsWorking');
+  },
+  
+  'click .removeFilter': function () {
+    Session.set('filterWorkers', '');
   }
 });

@@ -29,5 +29,10 @@ Template.mdJobsManageARUGroups.events({
         WtGrowl.success('Group deleted successfully.');
       }
     });
+  },
+  
+  'click .viewServers': function () {
+    Session.set('filterWorkers', this.name);
+    Router.go('mdJobsWorkers');
   }
 });
