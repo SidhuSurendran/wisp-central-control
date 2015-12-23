@@ -42,22 +42,22 @@
     </td>
     <td>
       {{#if pausable}}
-        <button class="btn btn-default btn-xs pauseBtn" data-toggle="tooltip" title="Pause"><i class="fa fa-pause"></i></button>
+        <button class="btn btn-admin btn-admin-default btn-xs pauseBtn" data-toggle="tooltip" title="Pause"><i class="fa fa-pause"></i></button>
       {{/if}}
       {{#if equals status "paused"}}
-        <button class="btn btn-default btn-xs resumeBtn" data-toggle="tooltip" title="Resume"><i class="fa fa-play"></i></button>
+        <button class="btn btn-admin btn-admin-default btn-xs resumeBtn" data-toggle="tooltip" title="Resume"><i class="fa fa-play"></i></button>
       {{/if}}
       {{#if restartable}}
-        <button class="btn btn-success btn-xs restartBtn" data-toggle="tooltip" title="Restart"><i class="fa fa-repeat"></i></button>
+        <button class="btn btn-admin btn-admin-success btn-xs restartBtn" data-toggle="tooltip" title="Restart"><i class="fa fa-repeat"></i></button>
       {{/if}}
       {{#if equals status "completed"}}
-        <button class="btn btn-primary btn-xs rerunBtn" data-toggle="tooltip" title="Rerun"><i class="fa fa-refresh"></i></button>
+        <button class="btn btn-admin btn-admin-primary btn-xs rerunBtn" data-toggle="tooltip" title="Rerun"><i class="fa fa-refresh"></i></button>
       {{/if}}
       {{#if cancellable}}
-        <button class="btn btn-warning btn-xs cancelBtn" data-toggle="tooltip" title="Cancel"><i class="fa fa-ban"></i></button>
+        <button class="btn btn-admin btn-admin-warning btn-xs cancelBtn" data-toggle="tooltip" title="Cancel"><i class="fa fa-ban"></i></button>
       {{/if}}
       {{#if removable}}
-        <button class="btn btn-danger btn-xs removeBtn" data-toggle="tooltip" title="Remove"><i class="fa fa-remove"></i></button>
+        <button class="btn btn-admin btn-admin-danger btn-xs removeBtn" data-toggle="tooltip" title="Remove"><i class="fa fa-remove"></i></button>
       {{/if}}
     </td>
     {{/with}}

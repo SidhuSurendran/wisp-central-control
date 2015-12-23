@@ -1,0 +1,39 @@
+.btn-admin{
+    border-radius:5px !important;
+    color:#FFF !important; 
+    border:none !important;
+}
+.btn-admin-default{
+    background-color:#e0e1e2 !important;
+}
+.btn-admin-default:hover{
+    background-color:#cacbcd !important;
+}
+.btn-admin-success{
+    background-color:#00b5ad !important;
+}
+.btn-admin-success:hover{
+    background-color:#009c95 !important;
+}
+.btn-admin-primary{
+    background-color:#2185d0 !important;
+}
+.btn-admin-primary:hover{
+    background-color:#1678c2 !important;
+}
+.btn-admin-warning{
+    background-color:#daa300 !important;
+}
+.btn-admin-warning:hover{
+    background-color:#eaae00 !important;
+}
+.btn-admin-danger{
+    background-color:#db2828 !important;
+}
+.btn-admin-danger:hover{
+    background-color:#ba1111 !important;
+}
+.send-to-aru{
+    border-radius:5px !important;
+    color:#FFF !important;
+}
