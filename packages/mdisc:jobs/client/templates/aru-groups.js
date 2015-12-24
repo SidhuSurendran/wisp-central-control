@@ -4,6 +4,19 @@ Template.mdJobsARUGroups.helpers({
   }
 });
 
+Template.mdJobsARUGroups.events({
+  'blur .jobTagInput': function (e) {
+    var jobTag = $(e.target).val();
+    Meteor.call('updateJobTag', this._id, jobTag, function (err, res) {
+      if (err) {
+        WtGrowl.fail('Failed to update Job Tag.');
+      } else {
+        WtGrowl.success('Job Tag updated.');
+      }
+    });
+  }
+});
+
 Template.mdJobsARUGroupsSelect.helpers({
   groupList: function () {
     return MdJobs.groups.find();

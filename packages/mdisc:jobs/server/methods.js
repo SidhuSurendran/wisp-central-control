@@ -62,5 +62,9 @@ Meteor.methods({
   removeARUGroupFromUser: function (userId, group) {
     if (!Roles.userIsInRole(Meteor.userId(), ['admin'])) throw new Meteor.Error(401, "Not authorized");
     Meteor.users.update({_id: userId}, {$pull: {"profile.aruGroups": group}});
+  },
+  updateJobTag: function (userId, jobTag) {
+    if (!Roles.userIsInRole(Meteor.userId(), ['admin'])) throw new Meteor.Error(401, "Not authorized");
+    Meteor.users.update({_id: userId}, {$set: {"profile.jobTag": jobTag}});
   }
 });
