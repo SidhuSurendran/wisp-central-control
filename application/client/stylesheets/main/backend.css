@@ -37,3 +37,10 @@
     border-radius:5px !important;
     color:#FFF !important;
 }
+.btn-admin-xs {
+    padding: 10px !important;
+    font-size: 12px !important;
+    line-height: 0.2 !important;
+    border-radius: 5px !important;
+    height: 30px;
+}
