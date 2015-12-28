@@ -17,3 +17,8 @@ Router.route('/manage-aru-groups/', {
   name: 'mdJobsManageARUGroups',
   template: 'mdJobsManageARUGroups'
 });
+
+Router.route('/workers-tab/', {
+  name: 'mdJobsViewWorkersTab',
+  template: 'mdJobsViewWorkersTab'
+});
