@@ -7,5 +7,34 @@
 </template>
 
 <template name="mdJobsViewWorkersTabContent">
-  {{worker.profile.jobTag}}
+  <h5>Status</h5><hr />
+  <table class="table">
+    <tr>
+      <td>Worker Login Email</td>
+      <td>:</td>
+      <td>
+        {{#each worker.emails}}{{address}}{{/each}}
+      </td>
+    </tr>
+    <tr>
+      <td>Last Active</td>
+      <td>:</td>
+      <td>{{#if worker.profile.lastActive}}{{relativeTime worker.profile.lastActive}}{{/if}}</td>
+    </tr>
+    <tr>
+      <td>Job Tag</td>
+      <td>:</td>
+      <td>{{worker.profile.jobTag}}</td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>:</td>
+      <td>
+        {{#if isOnline worker.profile.lastActive}}Online{{else}}Offline{{/if}}
+      </td>
+    </tr>
+  </table>
+  
+  <h5>Jobs</h5><hr />
+  {{>mdJobsJobTable}}
 </template>
