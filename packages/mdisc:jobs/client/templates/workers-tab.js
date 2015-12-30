@@ -37,5 +37,8 @@ Template.mdJobsViewWorkersTabContent.helpers({
       return true;
     }
     return false;
+  },
+  jobFilter: function () {
+    return "recordArchiveOnARU-"+this.worker.profile.jobTag;
   }
 });
