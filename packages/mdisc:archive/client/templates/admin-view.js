@@ -63,6 +63,11 @@ Template.mdArchiveAll.events({
   "click .send-to-aru": function(event) {
     event.preventDefault();
     var id = $(event.target).val();
-    Meteor.call('recordArchiveOnARU', 'default', id);
+    var jobTag = 'default';
+    var parentData = Template.parentData(0);
+    if (parentData && parentData.worker && parentData.worker.profile && parentData.worker.profile.jobTag) {
+      jobTag = parentData.worker.profile.jobTag;
+    }
+    Meteor.call('recordArchiveOnARU', jobTag, id);
   },
 });

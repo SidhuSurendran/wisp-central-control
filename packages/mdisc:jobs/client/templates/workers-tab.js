@@ -31,6 +31,11 @@ Template.mdJobsViewWorkersTab.helpers({
   }
 });
 
+Template.mdJobsViewWorkersTab.onCreated(function () {
+  Session.set('mdArchiveAdminViewStatus', 'Ready');
+  Session.set('mdArchiveAdminViewDate', '0');
+});
+
 Template.mdJobsViewWorkersTabContent.helpers({
   isOnline: function (lastActive) {
     if (reactiveDate.get() - lastActive < tick) {
