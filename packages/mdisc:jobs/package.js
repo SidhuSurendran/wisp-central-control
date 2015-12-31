@@ -21,7 +21,8 @@ Package.onUse(function(api) {
     'wisptools:roles',
     'vsivsi:job-collection@1.2.3',
     'reactive-var',
-    'wisptools:growl'
+    'wisptools:growl',
+    'wisptools:tab-page'
   ]);    
 
   api.addFiles([
@@ -31,6 +32,8 @@ Package.onUse(function(api) {
     'client/templates/job-table.js',
     'client/templates/workers.html',
     'client/templates/workers.js',
+    'client/templates/workers-tab.html',
+    'client/templates/workers-tab.js',
     'client/templates/manage-aru-groups.html',
     'client/templates/manage-aru-groups.js',
     'client/templates/aru-groups.html',

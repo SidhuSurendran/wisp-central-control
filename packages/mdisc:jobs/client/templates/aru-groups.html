@@ -5,6 +5,7 @@
         <tbody>
           <tr>
             <th>Email</th>
+            <th>Job Tag</th>
             <th>Groups</th>
           </tr>
           {{#each userList}}
@@ -15,6 +16,9 @@
               {{address}}
               {{/each}}
               {{services.google.email}}
+            </td>
+            <td>
+              <input type="text" class="form-control jobTagInput" value="{{profile.jobTag}}" />
             </td>
             <td>
               {{>mdJobsARUGroupsSelect}}
