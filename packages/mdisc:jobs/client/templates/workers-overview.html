@@ -1,0 +1,22 @@
+<template name="mdJobsViewWorkersOverview">
+  <div class="bg-secondary app-page">
+    <div class="container">
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <th>Group</th>
+            <th>Action</th>
+          </tr>
+          {{#each groupList}}
+          <tr>
+            <td>{{name}}</td>
+            <td>
+              <button class="btn btn-admin btn-admin-default btn-xs viewWorkers">View Workers</button>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

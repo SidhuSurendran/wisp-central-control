@@ -18,6 +18,11 @@ Router.route('/manage-aru-groups/', {
   template: 'mdJobsManageARUGroups'
 });
 
+Router.route('/workers-overview/', {
+  name: 'mdJobsViewWorkersOverview',
+  template: 'mdJobsViewWorkersOverview'
+});
+
 Router.route('/workers-tab/', {
   name: 'mdJobsViewWorkersTab',
   template: 'mdJobsViewWorkersTab'
