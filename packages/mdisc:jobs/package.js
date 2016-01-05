@@ -32,6 +32,8 @@ Package.onUse(function(api) {
     'client/templates/job-table.js',
     'client/templates/workers.html',
     'client/templates/workers.js',
+    'client/templates/workers-overview.html',
+    'client/templates/workers-overview.js',
     'client/templates/workers-tab.html',
     'client/templates/workers-tab.js',
     'client/templates/manage-aru-groups.html',

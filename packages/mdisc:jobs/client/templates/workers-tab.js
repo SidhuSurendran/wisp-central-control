@@ -6,9 +6,13 @@ Meteor.setInterval((function () {
 }), tick);
 
 Template.mdJobsViewWorkersTab.helpers({
+  filterGroup: function () {
+    return Session.get('filterGroup');
+  },
   tabData: function () {
     var workerTabs = new Array();
-    Meteor.users.find({roles: {$in: ['job-server']}}).forEach(function (worker) {
+    var filterGroup = Session.get('filterGroup');
+    Meteor.users.find({roles: {$in: ['job-server']}, "profile.aruGroups": {$in: [filterGroup]}}).forEach(function (worker) {
       var tabIcon = '';
       if (reactiveDate.get()-worker.profile.lastActive<tick) {
         tabIcon = '<i class="fa fa-circle pull-right text-success'+'"></i>';
@@ -24,7 +28,7 @@ Template.mdJobsViewWorkersTab.helpers({
       });
     });
     return {
-      showTitle: true,
+      showTitle: false,
       title: "Workers",
       pages: workerTabs
     };
