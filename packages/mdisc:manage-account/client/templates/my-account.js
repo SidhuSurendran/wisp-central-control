@@ -273,7 +273,23 @@ Template.mdTrack.helpers({
   },
   statusFormat: function(status){
     if(status=="in_transit")
-      return "Dispatched";
+      return "In transit";
+    else if(status=="unknown")
+      return "Unknown";
+    else if(status=="pre_transit")
+      return "Pre Transit";
+    else if(status=="out_for_delivery")
+      return "Out for Delivery";
+    else if(status=="delivered")
+      return "Delivered";
+    else if(status=="return_to_sender")
+      return "Return to Sender";
+    else if(status=="available_for_pickup")
+      return "Available for PickUp";
+    else if(status=="failure")
+      return "Failure";
+    else if(status=="cancelled")
+      return "Cancelled";
     else
       return status;
   },

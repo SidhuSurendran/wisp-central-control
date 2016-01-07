@@ -76,7 +76,7 @@ ChargeBeeAPI.updateCardForCustomer = function (customerId, cardDetails, callback
     throw new Meteor.Error("chargebee-error", 'Callback should be a function.');
   }
   ChargeBee.card.update_card_for_customer(customerId, {
-    gateway: "chargebee",
+    gateway: Meteor.settings.chargebee.gateway,
     number: cardDetails.number,
     expiry_month: cardDetails.expMonth,
     expiry_year: cardDetails.expYear,
