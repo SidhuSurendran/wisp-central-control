@@ -21,7 +21,8 @@ Package.onUse(function(api) {
     'wisptools:roles',
     'vsivsi:job-collection@1.2.3',
     'reactive-var',
-    'wisptools:growl'
+    'wisptools:growl',
+    'wisptools:tab-page'
   ]);    
 
   api.addFiles([
@@ -29,16 +30,29 @@ Package.onUse(function(api) {
     'client/templates/admin-view.js',
     'client/templates/job-table.html',
     'client/templates/job-table.js',
+    'client/templates/workers.html',
+    'client/templates/workers.js',
+    'client/templates/workers-overview.html',
+    'client/templates/workers-overview.js',
+    'client/templates/workers-tab.html',
+    'client/templates/workers-tab.js',
+    'client/templates/manage-aru-groups.html',
+    'client/templates/manage-aru-groups.js',
+    'client/templates/aru-groups.html',
+    'client/templates/aru-groups.js',
     'client/menu.js',
+    'client/subscriptions.js'
     ], ['client']);
 
   api.addFiles([
-    'lib/jobs.js',
+    'lib/collections.js',
     'lib/router.js'
     ], ['server','client']);
 
   api.addFiles([
-    'server/methods.js'
+    'server/methods.js',
+    'server/publications.js',
+    'server/jobs.js'
     ], ['server']);
   
   api.export('Jobs');

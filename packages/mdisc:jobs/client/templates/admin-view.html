@@ -3,7 +3,11 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-              <h4>Server Jobs</h4><hr />
+              <h4>Server Jobs</h4>
+              {{#if hasFilter}}
+                <span>Jobs filtered by type {{jobFilter}}.</span> <a href="" class="removeFilter">(Remove Filter)</a>
+              {{/if}}
+              <hr />
         </div>
       </div>
       <div class="row">

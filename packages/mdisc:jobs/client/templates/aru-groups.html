@@ -1,11 +1,12 @@
-<template name="wtRolesUser">
+<template name="mdJobsARUGroups">
   <div class="bg-secondary app-page">
     <div class="container">
-      <table id="wtRolesUserTable" class="table table-hover"  >
+      <table id="mdJobsUserTable" class="table table-hover">
         <tbody>
           <tr>
             <th>Email</th>
-            <th>Roles</th>
+            <th>Job Tag</th>
+            <th>Groups</th>
           </tr>
           {{#each userList}}
           <tr>
@@ -17,7 +18,10 @@
               {{services.google.email}}
             </td>
             <td>
-              {{>wtRolesUsersSelect}}
+              <input type="text" class="form-control jobTagInput" value="{{profile.jobTag}}" />
+            </td>
+            <td>
+              {{>mdJobsARUGroupsSelect}}
             </td>
           </tr>
           {{/each}}
@@ -27,11 +31,11 @@
   </div>
 </template>
 
-<template name="wtRolesUsersSelect">
-  {{#each roleList}}
-  <div class="checkbox-inline {{disabled name ../roles}}">
+<template name="mdJobsARUGroupsSelect">
+  {{#each groupList}}
+  <div class="checkbox-inline">
     <label>
-      <input class="roleCheckBox" type="checkbox" value="{{name}}" {{checked name ../roles}} {{disabled name ../roles ../_id}}>
+      <input class="groupCheckBox" type="checkbox" value="{{name}}" {{checked name ../profile.aruGroups}}>
       {{name}}
     </label>
   </div>

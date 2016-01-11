@@ -36,13 +36,16 @@ Package.onUse(function(api) {
     
   api.addFiles([
     'client/menu.js',
+    'client/subscription.js',
     'client/templates/users.html',
-    'client/templates/users.js'
+    'client/templates/users.js',
+    'client/templates/manage-roles.html',
+    'client/templates/manage-roles.js'
   ], 'client');
     
   api.addFiles([
     'server/publication.js',
-    'server/userMethods.js'
+    'server/methods.js'
   ], 'server');
 
   api.export('Roles');
